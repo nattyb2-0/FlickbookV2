@@ -1,11 +1,12 @@
 
 const express = require('express');
-const router = express.Router()
+const router = express.Router();
+const prisonerModel = require('../models/prisoners')
 
    router.route('/')
-    .get((req,res,next)=>{
-      res.send('this will get all inmates')
-     })
+    .get(prisonerModel. getAllPrisoners,(req,res)=>{
+      res.status(200).json(res.prisoners)
+    })
     .post((req,res,next)=>{
       res.send('this will create inmate data')
     })
