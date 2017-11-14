@@ -1,11 +1,12 @@
-const database = require ('../db/dbconnection');
+
 const express = require('express');
 const router = express.Router()
+const userModel = require('../models/users')
 
    router.route('/')
-    .get((req,res,next)=>{
-      res.send('this will show you all users')
-     })
+    .get(userModel. getAllUsers,(req,res)=>{
+      res.status(200).json(res.users)
+    })
     .post((req,res,next)=>{
       res.send('this will create a user')
      })
