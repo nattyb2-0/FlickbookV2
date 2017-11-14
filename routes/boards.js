@@ -1,12 +1,12 @@
 
-
+const boardsModel = require('../models/boards')
 const express = require('express');
 const router = express.Router()
 
    router.route('/')
-    .get((req,res,next)=>{
-      res.send('this will get all boards')
-     })
+    .get(boardsModel. getAllBoards,(req,res)=>{
+      res.status(200).json(res.boards)
+    })
     .post((req,res,next)=>{
       res.send('this will create a board')
     })

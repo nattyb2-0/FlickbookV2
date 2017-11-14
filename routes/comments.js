@@ -1,11 +1,11 @@
-
+const commentsModel = require('../models/comments')
 const express = require('express');
 const router = express.Router()
 
    router.route('/')
-    .get((req,res,next)=>{
-      res.send('this will get all comments')
-     })
+    .get(commentsModel. getAllComments,(req,res)=>{
+      res.status(200).json(res.comments)
+    })
     .post((req,res,next)=>{
       res.send('this will create a comment')
     })
