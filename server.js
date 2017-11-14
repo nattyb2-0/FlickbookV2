@@ -19,6 +19,7 @@ app.use('/likes', require('./routes/likes'))
 app.use('/posts', require('./routes/posts'))
 app.use('/prisoners', require('./routes/prisoners'))
 app.use('/users', require('./routes/users'))
+app.use('/uploads', require('./routes/uploads'))
 
 
 const PORT = process.argv[2] || process.env.PORT || 3001;

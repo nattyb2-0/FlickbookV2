@@ -11,6 +11,11 @@ const userModel = require('../models/users')
       res.send('this will create a user')
      })
 
+    router.route('/profiles')
+    .get(userModel. getProfile,(req,res)=>{
+      res.status(200).json(res.profile)
+    })
+
    router.route('/profile/:id')
     .get((req,res,next)=>{
       res.send('this will show you a profile info')
